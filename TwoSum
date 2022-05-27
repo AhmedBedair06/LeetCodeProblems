@@ -1,0 +1,17 @@
+##Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.##
+
+nums = [2,7,11,15]
+target = 9
+i = 0
+x = 1
+op = []
+while(nums[i] + nums[(i + x)] != target):
+    x += 1
+    if(nums[i+x] == len(nums)):
+        i += 1
+        x = 1
+        continue
+
+op.append(i)
+op.append(i+x)
+print(op)
