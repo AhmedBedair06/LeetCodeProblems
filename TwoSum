@@ -1,17 +1,12 @@
 ##Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.##
 
-nums = [2,7,11,15]
-target = 9
-i = 0
-x = 1
-op = []
-while(nums[i] + nums[(i + x)] != target):
-    x += 1
-    if(nums[i+x] == len(nums)):
-        i += 1
-        x = 1
-        continue
-
-op.append(i)
-op.append(i+x)
-print(op)
+map = {}
+       for ind,num in enumerate(nums):
+        diff = target - num
+        if diff in map:
+            return [map[diff], ind]
+        map[num] = ind
+        
+##used hashmap to iterate through given array.
+##subtracted each index from target and used if statement to search the hashmap if the difference exists.
+##if it does,then the objective is complete and it returns the indices of the number and its difference with the target.
