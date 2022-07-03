@@ -1,0 +1,9 @@
+##Given an integer x, return true if x is palindrome integer.
+##An integer is a palindrome when it reads the same backward as forward
+
+        num = str(x)
+        inv = "".join(reversed(num))
+        if num == inv:
+            return True
+        else:
+            return False
