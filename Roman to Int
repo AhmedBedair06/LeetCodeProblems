@@ -1,0 +1,39 @@
+## Given a roman numeral, convert it to an integer.
+
+       Inum = 0
+       for i in range(len(s)):
+           if s[i] == "I":
+               Inum += 1
+
+           if s[i] == "V":
+               Inum += 5
+               if i != 0:
+                  if s[i-1] == "I":
+                       Inum = Inum - 2
+           if s[i] == "X":
+               Inum += 10
+               if i != 0:
+                  if s[i-1] == "I":
+                       Inum = Inum - 2
+
+           if s[i] == "L":
+               Inum += 50
+               if i != 0:
+                   if s[i - 1] == "X":
+                       Inum = Inum - 20
+           if s[i] == "C":
+               Inum += 100
+               if i != 0:
+                   if s[i - 1] == "X":
+                       Inum = Inum - 20
+
+           if s[i] == "D":
+               Inum += 500
+               if i != 0:
+                   if s[i - 1] == "C":
+                       Inum = Inum - 200
+           if s[i] == "M":
+               Inum += 1000
+               if i != 0:
+                   if s[i - 1] == "C":
+                       Inum = Inum - 200
