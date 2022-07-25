@@ -1,0 +1,14 @@
+## Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+
+maxSub = nums[0]
+curSum = 0
+for i in nums:
+   if curSum < 0:
+       curSum = 0
+   curSum += i
+   maxSub = max(maxSub,carSum)
+return maxSub
+
+## Used a method called kadane's algorithm, itterated through the array summing all the values to carSum whilst checking if carSum is negative which would mean that
+   the values that have been summed would not be in the maximum subarray, while also assigning the value of carSum to maxSub using max function to avoid assigning a
+   lower value to maxSub if the next value added decreases carSum.
