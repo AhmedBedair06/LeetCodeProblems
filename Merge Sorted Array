@@ -1,0 +1,9 @@
+## Merge nums1 and nums2 into a single array sorted in non-decreasing order.
+
+        for i in range(n):
+            nums1.remove(0)
+            
+        nums1 += nums2
+        nums1 = nums1.sort()
+        
+## The zeroes in nums1 occur as many times as the length of nums2(n) so I used for loop to remove zeroes in range of n and then merged and sorted both arrays
