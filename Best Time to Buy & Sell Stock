@@ -1,0 +1,23 @@
+## You are given an array prices where prices[i] is the price of a given stock on the ith day.
+   You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+   Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+   
+   
+        buy = 0
+        sell = 1
+        maxP = 0
+        while sell < len(prices):
+            if prices[sell]> prices[buy]:
+                profit = prices[sell] - prices[buy]
+                maxP = max(maxP,profit)
+            else:
+                buy = sell
+            sell += 1
+        return maxP
+        
+        
+## Used while loop to iterate through array with the buy and sell variables representing left and right pointers
+   The buy price must be lower than the selling price so the if statement makes sure that rule is applied, if a value lower than the buy price appears
+   the buy price is updated to that value and the sell price keeps updating till the end of the array while checking the profit of every case.
+   
+   
