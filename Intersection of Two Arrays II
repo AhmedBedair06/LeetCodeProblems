@@ -1,0 +1,23 @@
+## Given two integer arrays nums1 and nums2, return an array of their intersection.
+   Each element in the result must appear as many times as it shows in both arrays and you may return the result in any order
+   
+        intersection = []
+        n1 = len(nums1)
+        n2 = len(nums2)
+
+        if n1 > n2 or n1 = n2:
+          large = nums1
+          small = nums2
+        else:
+          large = nums2
+          small = nums1
+
+        for element in small:
+              if element in large:
+               intersection.append(element)
+               large.remove(element)
+    
+        return intersection
+        
+## Identified which array is smaller and looped on it in order to lower the looping time, checked if each value is present in both arrays and removed it from the large
+   array if it is present to make sure it isnt compared with again while iterating, added intersected values to new array.
