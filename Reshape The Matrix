@@ -1,0 +1,21 @@
+## You are given an m x n matrix mat and two integers r and c representing the number of rows and the number of columns of the wanted reshaped matrix.
+## The reshaped matrix should be filled with all the elements of the original matrix in the same row-traversing order as they were.
+
+        mat_1d = []
+        temp = []
+        reshaped = []
+        
+        if(r*c) != (len(mat)*len(mat[0])):  ##To check if the matrix can be reshaped by given integers##
+           return mat
+        else:
+           for i in range(len(mat)):   ##To transform original matrix to 1-dimensional form##
+              mat_1d += mat[i]
+           
+           for j in range(r):          ##SLiced 1-dim matrix using loops with the given integers and added to final matrix##
+              for k in range(c):      
+                 temp.append(mat_1d[0])
+                 mat_1d.remove(mat_1d[0])
+              reshaped.append(temp)
+              temp = []
+           
+           return reshaped
