@@ -1,0 +1,12 @@
+## Given an integer numRows, return the first numRows of Pascal's triangle.
+
+        res = [[1]]          ##Because the first row of pascal's triangle is always [1]
+         
+        for i in range(numRows-1):
+            temp = [0] + res[-1] + [0]    ##Added a temporary 0 to the beginning and the end of every row in order to be able to add them to the num after/before them
+            row = []
+            for j in range(len(res[-1])+1):  
+               row.append(temp[j] + temp [j+1])  ##Added every 2 adjacent values and added results to the next row
+            res.append(row)
+            
+        return res
