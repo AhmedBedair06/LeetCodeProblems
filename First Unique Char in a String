@@ -1,0 +1,13 @@
+##Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+
+        s = list(s)           ##Turned s to a list to make it mutable
+        temp = s[:]           ##Made a temp copy of the list s
+        
+        for letter in s:      
+            temp.remove(letter)   ##checked every letter in s by removing it from temp and checking if it still exists
+            if letter not in temp:   
+                return s.index(letter)  ##If it is unique then it will not exist because I already removed it's only copy
+            else:
+                temp.insert(s.index(letter),letter)  ##If not it is returned to its original location
+            
+        return -1  ##if no character is unique or if all characters are unique
