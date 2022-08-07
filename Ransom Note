@@ -1,0 +1,16 @@
+## Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
+## Each letter in magazine can only be used once in ransomNote.
+
+        ransom = list(ransomNote)     ##Turned both string to list to make them mutable
+        mag = list(magazine)
+        temp = []                     ##Made a temporary empty list where I will attempt to contruct the ransom string
+        
+        for letter in ransom:
+            if letter in mag:
+                temp.append(letter)   ##Took every letter that is both present in ransom and mag and stored in temp
+                mag.remove(letter)
+                
+        if temp == ransom:            ##if ransom can be constructed then it will be equal to temp
+            return True
+        else:
+            return False
