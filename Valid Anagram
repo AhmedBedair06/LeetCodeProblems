@@ -1,0 +1,9 @@
+##Given two strings s and t, return true if t is an anagram of s, and false otherwise
+
+        slist = sorted(list(s))    ##turned string to lists and sorted them
+        tlist = sorted(list(t))
+         
+        if slist == tlist:         ##if the two strings are angrams then they will be equal when sorted by letters
+            return True
+        else:
+            return False
