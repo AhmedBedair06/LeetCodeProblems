@@ -1,0 +1,5 @@
+        hash = {}
+        for number in nums:                           #Used hashmap to store each value and the number of it's occurences, and then used if
+            hash[number] = 1 + hash.get(number , 0)    statement to find the element that occurred in more than half of the list.
+            if hash[number] > len(nums)//2:
+                return number
